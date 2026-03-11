@@ -1,0 +1,112 @@
+[
+    {
+        "_id": {
+            "$oid": "69a115bba54457895dcf6020"
+        },
+        "user_id": "b897d405-2cf2-4954-89a6-bbb18f2af7d9",
+        "lesson_id": "es-basics-1",
+        "completed": true,
+        "completed_at": "2026-02-27T03:55:39.912306+00:00",
+        "language": "es",
+        "score": 100
+    },
+    {
+        "_id": {
+            "$oid": "69a7dffbdd8f0d3d805d6aa9"
+        },
+        "lesson_id": "es-basics-2",
+        "user_id": "b897d405-2cf2-4954-89a6-bbb18f2af7d9",
+        "completed": true,
+        "completed_at": "2026-03-04T07:43:50.706249+00:00",
+        "language": "es",
+        "score": 100
+    },
+    {
+        "_id": {
+            "$oid": "69a7e2d9dd8f0d3d805d6aaa"
+        },
+        "user_id": "b897d405-2cf2-4954-89a6-bbb18f2af7d9",
+        "lesson_id": "es-basics-3",
+        "completed": true,
+        "completed_at": "2026-03-04T07:44:25.252996+00:00",
+        "language": "es",
+        "score": 75
+    },
+    {
+        "_id": {
+            "$oid": "69a7e2f8dd8f0d3d805d6aab"
+        },
+        "lesson_id": "es-phrases-4",
+        "user_id": "b897d405-2cf2-4954-89a6-bbb18f2af7d9",
+        "completed": true,
+        "completed_at": "2026-03-04T07:45:35.241740+00:00",
+        "language": "es",
+        "score": 100
+    },
+    {
+        "_id": {
+            "$oid": "69a8389bdd8f0d3d805d6aac"
+        },
+        "lesson_id": "es-basics-1",
+        "user_id": "ab2a6be7-a311-4fde-9651-8f2b92312667",
+        "completed": true,
+        "completed_at": "2026-03-04T13:50:19.289454+00:00",
+        "language": "es",
+        "score": 75
+    },
+    {
+        "_id": {
+            "$oid": "69a86bd3dd8f0d3d805d6aad"
+        },
+        "user_id": "b897d405-2cf2-4954-89a6-bbb18f2af7d9",
+        "lesson_id": "es-greetings-1",
+        "completed": true,
+        "completed_at": "2026-03-04T17:46:29.846324+00:00",
+        "language": "es",
+        "score": 100
+    },
+    {
+        "_id": {
+            "$oid": "69a8edffdd8f0d3d805d6aae"
+        },
+        "user_id": "ab2a6be7-a311-4fde-9651-8f2b92312667",
+        "lesson_id": "es-greetings-1",
+        "completed": true,
+        "completed_at": "2026-03-05T02:44:15.510822+00:00",
+        "language": "es",
+        "score": 83
+    },
+    {
+        "_id": {
+            "$oid": "69aa6102dd8f0d3d805d6aaf"
+        },
+        "user_id": "2a966f8c-ae9c-4037-981d-46fb9b043651",
+        "lesson_id": "es-greetings-1",
+        "completed": true,
+        "completed_at": "2026-03-06T05:07:14.526227+00:00",
+        "language": "es",
+        "score": 83
+    },
+    {
+        "_id": {
+            "$oid": "69aed8639d9d7aa0b18971db"
+        },
+        "lesson_id": "fr-greetings-1",
+        "user_id": "2ac3fe19-1f01-4227-a313-b547a17b2671",
+        "completed": false,
+        "completed_at": "2026-03-09T15:46:53.181804+00:00",
+        "language": "fr",
+        "score": 16
+    },
+    {
+        "_id": {
+            "$oid": "69b1098c9d9d7aa0b1897dfb"
+        },
+        "user_id": "b897d405-2cf2-4954-89a6-bbb18f2af7d9",
+        "lesson_id": "es-numbers-2",
+        "completed": true,
+        "completed_at": "2026-03-11T06:19:56.208680+00:00",
+        "language": "es",
+        "score": 100
+    }
+]
