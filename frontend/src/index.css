@@ -54,6 +54,30 @@ code {
         --chart-5: 27 87% 67%;
         --radius: 1rem;
     }
+
+    .dark {
+        --background: 222 47% 5%;
+        --foreground: 210 40% 98%;
+        --card: 222 47% 8%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222 47% 8%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 199 89% 48%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 239 84% 67%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 217 32% 15%;
+        --muted-foreground: 215 20% 65%;
+        --accent: 48 96% 53%;
+        --accent-foreground: 26 83% 14%;
+        --destructive: 0 62% 30%;
+        --destructive-foreground: 210 40% 98%;
+        --success: 142 71% 45%;
+        --success-foreground: 0 0% 100%;
+        --border: 217 32% 20%;
+        --input: 217 32% 20%;
+        --ring: 199 89% 48%;
+    }
 }
 
 @layer base {
@@ -166,16 +190,16 @@ code {
 
 /* Card styles */
 .stratos-card {
-    @apply bg-white rounded-3xl border-2 border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.05)] p-6;
+    @apply bg-card text-card-foreground rounded-3xl border-2 border-border shadow-[0_8px_30px_rgba(0,0,0,0.05)] p-6 transition-colors duration-300;
 }
 
 .stratos-card-interactive {
-    @apply bg-white rounded-3xl border-2 border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all cursor-pointer;
+    @apply bg-card text-card-foreground rounded-3xl border-2 border-border shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all cursor-pointer;
 }
 
 /* Input styles */
 .stratos-input {
-    @apply bg-slate-50 border-2 border-slate-200 focus:border-sky-400 focus:ring-4 focus:ring-sky-100 rounded-xl px-4 py-3 font-medium text-slate-700 placeholder:text-slate-400 transition-all outline-none w-full;
+    @apply bg-muted/50 border-2 border-border focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-xl px-4 py-3 font-medium text-foreground placeholder:text-muted-foreground transition-all outline-none w-full;
 }
 
 /* Lesson option styles */
@@ -218,7 +242,7 @@ code {
 }
 
 .bg-stratos-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    @apply bg-card;
 }
 
 /* Streak fire animation */
@@ -245,11 +269,11 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-    @apply bg-slate-100 rounded-full;
+    @apply bg-muted rounded-full;
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-slate-300 rounded-full hover:bg-slate-400;
+    @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50;
 }
 
 /* Focus states */
