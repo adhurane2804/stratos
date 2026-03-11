@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { Toaster } from "sonner";
 import { AuthProvider, useAuth } from "./context/AuthContext";
-import { ThemeProvider } from "./context/ThemeContext";
 
 // Pages
 import LandingPage from "./pages/LandingPage";
@@ -99,20 +98,18 @@ function AppRoutes() {
 function App() {
   return (
     <BrowserRouter>
-      <ThemeProvider>
-        <AuthProvider>
-          <AppRoutes />
-          <Toaster
-            position="top-center"
-            toastOptions={{
-              style: {
-                borderRadius: '1rem',
-                fontWeight: 600,
-              },
-            }}
-          />
-        </AuthProvider>
-      </ThemeProvider>
+      <AuthProvider>
+        <AppRoutes />
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            style: {
+              borderRadius: '1rem',
+              fontWeight: 600,
+            },
+          }}
+        />
+      </AuthProvider>
     </BrowserRouter>
   );
 }

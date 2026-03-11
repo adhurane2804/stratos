@@ -83,22 +83,22 @@ const Shop = () => {
     };
 
     return (
-        <div className="min-h-screen bg-background transition-colors duration-300">
+        <div className="min-h-screen bg-slate-50">
             {/* Header */}
-            <div className="bg-card border-b border-border sticky top-0 z-40">
+            <div className="bg-white border-b border-slate-200 sticky top-0 z-40">
                 <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                        <Link to="/dashboard" className="p-2 hover:bg-muted rounded-xl transition-colors">
-                            <ArrowLeft className="w-5 h-5 text-muted-foreground" />
+                        <Link to="/dashboard" className="p-2 hover:bg-slate-100 rounded-xl transition-colors">
+                            <ArrowLeft className="w-5 h-5 text-slate-600" />
                         </Link>
-                        <h1 className="font-heading font-bold text-xl text-foreground">Stratos Shop</h1>
+                        <h1 className="font-heading font-bold text-xl text-slate-800">Stratos Shop</h1>
                     </div>
 
-                    <div className="bg-indigo-50 dark:bg-indigo-950/40 px-4 py-2 rounded-2xl flex items-center gap-2 border border-indigo-100 dark:border-indigo-900/30">
-                        <div className="w-6 h-6 bg-indigo-500 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-200 dark:shadow-indigo-900/30 animate-bounce-subtle">
+                    <div className="bg-indigo-50 px-4 py-2 rounded-2xl flex items-center gap-2 border border-indigo-100">
+                        <div className="w-6 h-6 bg-indigo-500 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-200 animate-bounce-subtle">
                             <Sparkles className="w-3.5 h-3.5 text-white" />
                         </div>
-                        <span className="font-heading font-bold text-indigo-700 dark:text-indigo-400">{user?.gems || 0} Gems</span>
+                        <span className="font-heading font-bold text-indigo-700">{user?.gems || 0} Gems</span>
                     </div>
                 </div>
             </div>
@@ -107,8 +107,8 @@ const Shop = () => {
                 {/* Boosters Section */}
                 <div className="mb-12">
                     <div className="mb-8">
-                        <h2 className="font-heading font-bold text-2xl text-foreground mb-2">Power-Ups</h2>
-                        <p className="text-muted-foreground">Spend your gems to accelerate your learning.</p>
+                        <h2 className="font-heading font-bold text-2xl text-slate-800 mb-2">Power-Ups</h2>
+                        <p className="text-slate-500">Spend your gems to accelerate your learning.</p>
                     </div>
 
                     {loading ? (
@@ -155,13 +155,13 @@ const Shop = () => {
                 <div className="mb-12">
                     <div className="mb-8 flex items-center justify-between">
                         <div>
-                            <h2 className="font-heading font-bold text-2xl text-foreground mb-2">Gem Store</h2>
-                            <p className="text-muted-foreground">Need more gems? Top up your balance here.</p>
+                            <h2 className="font-heading font-bold text-2xl text-slate-800 mb-2">Gem Store</h2>
+                            <p className="text-slate-500">Need more gems? Top up your balance here.</p>
                         </div>
                         <div className="hidden sm:block">
-                            <div className="flex items-center gap-2 bg-amber-50 dark:bg-amber-950/40 px-4 py-2 rounded-xl border border-amber-100 dark:border-amber-900/30">
+                            <div className="flex items-center gap-2 bg-amber-50 px-4 py-2 rounded-xl border border-amber-100">
                                 <CreditCard className="w-4 h-4 text-amber-500" />
-                                <span className="text-xs font-bold text-amber-700 dark:text-amber-500">Safe Checkout</span>
+                                <span className="text-xs font-bold text-amber-700">Safe Checkout</span>
                             </div>
                         </div>
                     </div>
@@ -170,7 +170,7 @@ const Shop = () => {
                         {gemPackages.map((pkg) => (
                             <div
                                 key={pkg.id}
-                                className={`bg-card rounded-3xl p-6 border-2 transition-all shadow-sm flex flex-col items-center text-center cursor-pointer hover:-translate-y-1 ${selectedPackage?.id === pkg.id ? 'border-amber-400 bg-amber-50/30 dark:bg-amber-950/20' : 'border-border hover:border-amber-200 dark:hover:border-amber-800'
+                                className={`bg-white rounded-3xl p-6 border-2 transition-all shadow-sm flex flex-col items-center text-center cursor-pointer hover:-translate-y-1 ${selectedPackage?.id === pkg.id ? 'border-amber-400 bg-amber-50/30' : 'border-slate-100 hover:border-amber-200'
                                     }`}
                                 onClick={() => setSelectedPackage(pkg)}
                             >
@@ -186,7 +186,7 @@ const Shop = () => {
                                     <span className="font-heading font-extrabold text-xl">{pkg.amount}</span>
                                 </div>
 
-                                <div className="w-full py-2.5 bg-slate-900 dark:bg-slate-800 text-white rounded-xl font-heading font-bold text-sm shadow-md">
+                                <div className="w-full py-2.5 bg-slate-900 text-white rounded-xl font-heading font-bold text-sm shadow-md">
                                     ₹{pkg.price}
                                 </div>
                             </div>
@@ -242,31 +242,31 @@ const Shop = () => {
             {showCheckout && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center px-6">
                     <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-md" onClick={() => !isProcessing && setShowCheckout(false)} />
-                    <div className="bg-card w-full max-w-md rounded-[2.5rem] shadow-2xl relative overflow-hidden animate-in zoom-in-95 duration-300">
+                    <div className="bg-white w-full max-w-md rounded-[2.5rem] shadow-2xl relative overflow-hidden animate-in zoom-in-95 duration-300">
                         <div className="p-8">
                             <div className="flex items-center justify-between mb-8">
-                                <h2 className="font-heading font-bold text-2xl text-foreground">Secure Checkout</h2>
-                                <button onClick={() => setShowCheckout(false)} className="p-2 hover:bg-muted rounded-full">
-                                    <X className="w-6 h-6 text-muted-foreground" />
+                                <h2 className="font-heading font-bold text-2xl text-slate-800">Secure Checkout</h2>
+                                <button onClick={() => setShowCheckout(false)} className="p-2 hover:bg-slate-100 rounded-full">
+                                    <X className="w-6 h-6 text-slate-400" />
                                 </button>
                             </div>
 
-                            <div className="bg-muted/50 rounded-3xl p-6 mb-8 border border-border">
-                                <div className="flex items-center justify-between mb-4 pb-4 border-b border-border">
+                            <div className="bg-slate-50 rounded-3xl p-6 mb-8 border border-slate-100">
+                                <div className="flex items-center justify-between mb-4 pb-4 border-b border-slate-200">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/40 rounded-xl flex items-center justify-center text-amber-600">
+                                        <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600">
                                             <Gem className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <p className="font-bold text-foreground">{selectedPackage?.name}</p>
-                                            <p className="text-xs text-muted-foreground">{selectedPackage?.amount} Gems</p>
+                                            <p className="font-bold text-slate-800">{selectedPackage?.name}</p>
+                                            <p className="text-xs text-slate-500">{selectedPackage?.amount} Gems</p>
                                         </div>
                                     </div>
-                                    <p className="font-heading font-bold text-lg text-foreground">₹{selectedPackage?.price}</p>
+                                    <p className="font-heading font-bold text-lg text-slate-800">₹{selectedPackage?.price}</p>
                                 </div>
                                 <div className="flex items-center justify-between text-sm">
-                                    <span className="text-muted-foreground">Order Summary</span>
-                                    <span className="font-bold text-foreground">₹{selectedPackage?.price}</span>
+                                    <span className="text-slate-500">Order Summary</span>
+                                    <span className="font-bold text-slate-800">₹{selectedPackage?.price}</span>
                                 </div>
                             </div>
 

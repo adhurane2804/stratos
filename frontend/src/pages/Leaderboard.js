@@ -66,22 +66,22 @@ const Leaderboard = () => {
 
   const getRankBadge = (rank) => {
     if (rank === 1) return <Crown className="w-6 h-6 text-yellow-500 animate-pulse" />;
-    if (rank === 2) return <Medal className="w-6 h-6 text-slate-400 dark:text-slate-500" />;
-    if (rank === 3) return <Medal className="w-6 h-6 text-amber-600 dark:text-amber-700" />;
-    return <span className="font-heading font-bold text-muted-foreground text-lg">{rank}</span>;
+    if (rank === 2) return <Medal className="w-6 h-6 text-slate-400" />;
+    if (rank === 3) return <Medal className="w-6 h-6 text-amber-600" />;
+    return <span className="font-heading font-bold text-slate-500 text-lg">{rank}</span>;
   };
 
   const getRankStyle = (rank) => {
-    if (rank === 1) return 'bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/10 dark:to-amber-900/10 border-yellow-300 dark:border-yellow-700 shadow-[0_4px_20px_rgba(251,191,36,0.1)]';
-    if (rank === 2) return 'bg-gradient-to-r from-slate-50 to-gray-50 dark:from-slate-900/10 dark:to-gray-900/10 border-slate-200 dark:border-slate-800';
-    if (rank === 3) return 'bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/10 dark:to-amber-900/10 border-orange-200 dark:border-orange-800';
-    return 'bg-card border-border';
+    if (rank === 1) return 'bg-gradient-to-r from-yellow-50 to-amber-50 border-yellow-300 shadow-[0_4px_20px_rgba(251,191,36,0.2)]';
+    if (rank === 2) return 'bg-gradient-to-r from-slate-50 to-gray-50 border-slate-200';
+    if (rank === 3) return 'bg-gradient-to-r from-orange-50 to-amber-50 border-orange-200';
+    return 'bg-white border-slate-100';
   };
 
   const userRank = leaderboard.find(entry => entry.user_id === user?.id);
 
   return (
-    <div className="min-h-screen bg-background transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-gradient-to-br from-indigo-600 via-purple-600 to-sky-500 text-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 py-6 relative">
@@ -149,7 +149,7 @@ const Leaderboard = () => {
       </header>
 
       {/* Tabs */}
-      <div className="bg-card border-b border-border sticky top-0 z-10 overflow-x-auto">
+      <div className="bg-white border-b border-slate-200 sticky top-0 z-10 overflow-x-auto">
         <div className="max-w-2xl mx-auto px-6 flex items-center gap-8 h-14">
           {[
             { id: 'league', label: 'League', icon: Shield },
@@ -159,13 +159,13 @@ const Leaderboard = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 h-full px-2 font-heading font-bold text-sm transition-all relative ${activeTab === tab.id ? 'text-indigo-600 dark:text-indigo-400' : 'text-muted-foreground hover:text-foreground'
+              className={`flex items-center gap-2 h-full px-2 font-heading font-bold text-sm transition-all relative ${activeTab === tab.id ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600'
                 }`}
             >
-              <tab.icon className={`w-4 h-4 ${activeTab === tab.id ? 'text-indigo-600 dark:text-indigo-400' : ''}`} />
+              <tab.icon className={`w-4 h-4 ${activeTab === tab.id ? 'text-indigo-600' : ''}`} />
               {tab.label}
               {activeTab === tab.id && (
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-indigo-600 dark:bg-indigo-400 rounded-t-full" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-indigo-600 rounded-t-full" />
               )}
             </button>
           ))}
@@ -176,7 +176,7 @@ const Leaderboard = () => {
         {/* Pending Requests */}
         {friendRequests.length > 0 && (
           <div className="mb-8 animate-in slide-in-from-top duration-500">
-            <h2 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4 flex items-center gap-2">
+            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
               <UserPlus className="w-3 h-3 text-indigo-500" />
               Pending Requests ({friendRequests.length})
             </h2>
@@ -187,8 +187,8 @@ const Leaderboard = () => {
                     {req.name[0]}
                   </div>
                   <div className="flex-1">
-                    <p className="font-bold text-foreground text-sm">{req.name}</p>
-                    <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-tight">Level {req.level}</p>
+                    <p className="font-bold text-slate-800 text-sm">{req.name}</p>
+                    <p className="text-[10px] text-slate-400 font-bold uppercase tracking-tight">Level {req.level}</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <button
@@ -245,11 +245,11 @@ const Leaderboard = () => {
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <p className="font-heading font-bold text-foreground truncate leading-tight italic">
+                      <p className="font-heading font-bold text-slate-800 truncate leading-tight italic">
                         {entry.name}
                       </p>
                       {isUser && (
-                        <span className="text-[10px] bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 font-extrabold px-1.5 py-0.5 rounded-md uppercase tracking-tighter">You</span>
+                        <span className="text-[10px] bg-indigo-100 text-indigo-600 font-extrabold px-1.5 py-0.5 rounded-md uppercase tracking-tighter">You</span>
                       )}
                       {!isUser && !isFriend && activeTab !== 'global' && (
                         <button
@@ -262,19 +262,19 @@ const Leaderboard = () => {
                       )}
                     </div>
                     <div className="flex items-center gap-2 mt-0.5">
-                      <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest leading-none bg-muted px-1.5 py-0.5 rounded">Lv. {entry.level}</span>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none bg-slate-100 px-1.5 py-0.5 rounded">Lv. {entry.level}</span>
                       {entry.league && entry.league !== 'Bronze' && (
-                        <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest leading-none bg-indigo-50 dark:bg-indigo-900/30 px-1.5 py-0.5 rounded italic">{entry.league}</span>
+                        <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest leading-none bg-indigo-50 px-1.5 py-0.5 rounded italic">{entry.league}</span>
                       )}
                     </div>
                   </div>
 
                   <div className="flex flex-col items-end gap-1">
-                    <div className="flex items-center gap-1.5 text-indigo-600 dark:text-indigo-400">
-                      <Zap className="w-4 h-4 fill-indigo-600 dark:fill-indigo-400" />
+                    <div className="flex items-center gap-1.5 text-indigo-600">
+                      <Zap className="w-4 h-4 fill-indigo-600" />
                       <span className="font-heading font-extrabold text-base">{entry.xp}</span>
                     </div>
-                    <div className="flex items-center gap-1 text-orange-500 bg-orange-50 dark:bg-orange-900/20 px-2 py-0.5 rounded-lg border border-orange-100 dark:border-orange-800/30">
+                    <div className="flex items-center gap-1 text-orange-500 bg-orange-50 px-2 py-0.5 rounded-lg border border-orange-100">
                       <Flame className="w-3 h-3 fill-orange-500" />
                       <span className="font-extrabold text-[11px]">{entry.streak}</span>
                     </div>
